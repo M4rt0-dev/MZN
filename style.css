@@ -588,3 +588,16 @@ nav ul ul.dropdown-content li a:hover {
     .lt-bottom { font-size: 0.9rem; }
     .tv-btn { font-size: 1.2rem; padding: 10px 5px; }
 }
+
+/* Mensaje Oculto WZN Ghost */
+body::before {
+    content: "c3rr4m0s c0n3x10n";
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    color: #050505;
+    z-index: 9999;
+    pointer-events: none;
+}

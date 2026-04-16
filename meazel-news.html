@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEAZEL NEWS // CONSPIRATION CLUB</title>
-    <!-- Aquí se añade el icono para la pestaña del navegador -->
     <link rel="icon" href="meazel-logo.png" type="image/png">
     
     <style>
@@ -26,7 +25,6 @@
             overflow-x: hidden;
         }
 
-        /* Efecto CRT Scanlines (Líneas de monitor viejo) */
         body::after {
             content: " ";
             display: block;
@@ -55,17 +53,14 @@
             margin-bottom: 30px;
         }
 
-        /* Nuevo estilo para tu logo masónico */
         .main-logo {
-            width: 160px; /* Tamaño del logo */
+            width: 160px;
             display: block;
             margin: 0 auto 20px auto;
-            /* Este filtro invierte el fondo claro a oscuro y tiñe las líneas de verde para que encaje perfecto con el diseño */
             filter: invert(1) sepia(1) hue-rotate(70deg) saturate(5) drop-shadow(0 0 8px var(--main-green));
-            mix-blend-mode: screen; /* Elimina los bordes del fondo de la imagen */
+            mix-blend-mode: screen; 
         }
 
-        /* Efecto Glitch para el título */
         .glitch {
             font-family: 'VT323', monospace;
             font-size: 3rem;
@@ -112,7 +107,6 @@
             box-shadow: 0 0 10px var(--main-green);
         }
 
-        /* Contenido de Noticias / Conspiraciones */
         .terminal-text {
             color: var(--main-green);
             margin-bottom: 30px;
@@ -130,9 +124,8 @@
 
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        /* MODIFICACIÓN: Ocultar el grid al principio y añadir animación */
         .news-grid {
-            display: none; /* Inicialmente oculto */
+            display: none; 
             flex-direction: column;
             gap: 20px;
             animation: fadeIn 1.5s ease-in-out;
@@ -185,9 +178,8 @@
             color: white;
         }
 
-        /* MODIFICACIÓN: Ocultar el footer al principio y añadir animación */
         footer {
-            display: none; /* Inicialmente oculto */
+            display: none; 
             margin-top: 50px;
             text-align: center;
             border-top: 1px solid #333;
@@ -203,7 +195,6 @@
             animation: blink 2s infinite;
         }
 
-        /* Animación para cuando aparezcan las cards */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -213,11 +204,9 @@
 <body>
 
     <div class="container">
-        <!-- Link de vuelta al WZN principal -->
         <a href="index.html" class="nav-link">< BACK TO WZN ROOT</a>
 
         <header>
-            <!-- Aquí se inserta el nuevo logo de imagen -->
             <img src="./img-meazel/meazel-logo.png" alt="Símbolo Masónico M" class="main-logo">
             
             <h1 class="glitch" data-text="MEAZEL NEWS">MEAZEL NEWS</h1>
@@ -265,14 +254,14 @@
         <footer>
             <p><span class="alert">WARNING:</span> TU DIRECCIÓN IP HA SIDO REGISTRADA POR ENTRAR AQUÍ.</p>
             <p>TRUST NO ONE. THE TRUTH IS IN THE CODE.</p>
+            <p style="transform: rotate(180deg); color: #050505; font-size: 10px; margin-top: 15px; user-select: none;">3st4m0s 4l t4nt0 d3 qu3 v1v1m0s c0ntr0l4d0s p0r l4s 4lt4s 3sf3r4s,</p>
         </footer>
     </div>
 
     <script>
-        // Efecto máquina de escribir (Terminal)
         const text = "Iniciando protocolo masónico... Conexión P2P establecida... Bienvenido al Club. Lo que leas aquí no debe salir de la logia. Ellos vigilan.";
         let index = 0;
-        const speed = 50; // velocidad de escritura
+        const speed = 50; 
 
         function typeWriter() {
             if (index < text.length) {
@@ -280,15 +269,13 @@
                 index++;
                 setTimeout(typeWriter, speed);
             } else {
-                // MODIFICACIÓN: Una vez termina de escribir el texto, mostramos las cards y el footer
                 setTimeout(() => {
                     document.querySelector('.news-grid').style.display = 'flex';
                     document.querySelector('footer').style.display = 'block';
-                }, 400); // 400ms de suspenso antes de que aparezcan
+                }, 400);
             }
         }
 
-        // Iniciar el efecto al cargar la página
         window.onload = function() {
             setTimeout(typeWriter, 1000);
         };
