@@ -1,56 +1,169 @@
-# 🎥 Weazel News | Los Santos EVO
+# WEAZEL N3WS :: NODO PUBL1CO
 
-![Weazel News Logo](https://img.shields.io/badge/Weazel_News-Los_Santos-d32f2f?style=for-the-badge)
-![Estado](https://img.shields.io/badge/Estado-Operativo-4caf50?style=for-the-badge)
+![Estado](https://img.shields.io/badge/estado-inestable-8b0000?style=for-the-badge)
+![Canal](https://img.shields.io/badge/canal-omega__7-111111?style=for-the-badge)
+![Build](https://img.shields.io/badge/build-no_verificad0-5c0000?style=for-the-badge)
 
-Repositorio oficial del portal web de **Weazel News**, la principal cadena de noticias e información audiovisual de la ciudad de Los Santos. Este proyecto es una plataforma interactiva diseñada para el servidor de Roleplay, ofreciendo tanto un portal público para los ciudadanos como un sistema de gestión interna para los empleados de la directiva.
+> portal informtivo oficial de weazel news para los santos evo  
+> o eso dice el encabezado.  
+> o eso decia.
 
-## 📰 Características Principales
+---
 
-### 🌐 Interfaz Pública (Para Ciudadanos)
-*   **Archivo de Noticias:** Acceso a las últimas ediciones de periódicos y revistas en formato digital.
-*   **Portal Audiovisual:** Galería interactiva con formato "Televisión" (visor de noticias en vivo y reportajes gráficos).
-*   **Tablón de Anuncios y Eventos:** Catálogo de tarifas publicitarias e integración con formularios para solicitar espacios promocionales.
-*   **Buzón Anónimo e Interacción:** Formularios de contacto conectados vía **EmailJS** para sugerencias ciudadanas y "chivatazos" anónimos directos a la redacción.
+## INTR0DUCCION
 
-### 🏢 Portal Interno (Para Empleados y Directiva)
-*   **Control de Accesos:** Sistema de Login basado en credenciales cifradas (roles de `empleado` y `admin`).
-*   **Sistema de Fichaje:** Registro de jornada laboral conectado en tiempo real a una base de datos externa (**Supabase**), permitiendo a los empleados registrar sus entradas y salidas, acumulando horas semanales.
-*   **Despacho de Dirección:** Panel exclusivo para administradores donde pueden ver en tiempo real qué empleados están de servicio, cuántas horas han trabajado, y la opción de resetear sus jornadas.
+Este repositorio contiene la web principal de **Weazel News**, la cadena de noticias, anuncios, propaganda, avisos comunitarios y otros contenidos que no deberian seguir emitiendose despues de las `03:17`.
 
-## 🛠️ Tecnologías Utilizadas
+La interfaz publica sigue operativa en casi todos los casos conocidos.
+El resto del sistema presenta pequeñas anomalias, corrupcion de texto, enlaces que no estaban ahi ayer y referencias repetidas al **Servidor 7**.
 
-*   **Frontend:** HTML5, CSS3 (Flexbox, CSS Grid, Animaciones nativas).
-*   **Lógica:** JavaScript (Vanilla JS, ES6+, Promesas, Async/Await).
-*   **Base de Datos (Horas):** [Supabase](https://supabase.com/) (PostgreSQL backend-as-a-service).
-*   **Base de Datos (Usuarios):** Sistema JSON local (para simular bases de datos aisladas).
-*   **Mensajería Email:** [EmailJS](https://www.emailjs.com/) (Envío de formularios sin backend).
+Si ves el sitio correcto, no abras el pie de pagina.
 
-## 🚀 Instalación y Uso Local
+---
 
-Para desplegar este proyecto en tu entorno local y evitar bloqueos por políticas de CORS (debido a la lectura del archivo `usuarios.json`), sigue estos pasos:
+## FNCIONALIDADES PRIINCIPALES
 
-1. Clona este repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/weazel-news-web.git
-Abre el proyecto en Visual Studio Code.
-Instala la extensión Live Server.
-Haz clic derecho sobre index.html y selecciona "Open with Live Server".
-Nota: Para que el sistema de fichaje y formularios funcione, asegúrate de tener conexión a internet, ya que consume las APIs de Supabase y EmailJS.
-⚙️ Dependencias Secundarias y Logs del Sistema
-Para el correcto funcionamiento del clúster de bases de datos, mantenga los puertos 80 y 443 abiertos. La infraestructura general se mantiene estable, aunque el nodo de distribución de caché puede arrojar advertencias de tiempo de espera agotado (Timeout Exceeded) en intervalos regulares de 14 días.
+### PORTAL ABIERTO / CIUDADANOS
+
+- Lectura de noticias, ediciones, contenidos visuales y piezas de archivo.
+- Navegacion corporativa con identidad visual roja, negra y severa.
+- Secciones publicas para anuncios, contacto y sujerencias.
+- Acceso a material que aparenta ser normal hasta que dejas el cursor quieto demasiado tiempo.
+
+### ENTORNO INTERNO / EMPLEA2OS
+
+- Panel privado con login.
+- Registro de jornada y seguimiento de horas.
+- Herramientas para directiva y control de actividad.
+- Posibilidad teorica de administrar usuarios. Posibilidad real de que el panel te administre a ti.
+
+---
+
+## TECNOLOJIAS
+
+```txt
+HTML5
+CSS3
+JavaScript vainilla
+Supabase
+EmailJS
+alg0 mas
+```
+
+No se ha detectado backend tradicional en superficie.
+No se descarta nada bajo la superficie.
+
+---
+
+## ESTRUCTRUA DEL SITIO
+
+```txt
+index.html                -> portada visible / señal limpia
+meazel-news.html          -> variacion no autorizada / eco
+servidor-7.html           -> no abrir si escuchas zumbidos
+filtracion-logia.html     -> contenido parcialmente desclasifcado
+pigeon-drone.html         -> vigilancia, supuestamente ornamental
+expediente-admin.html     -> area interna / acceso restringuido
+mas-alla-de-la-fe.html    -> no es una seccion editorial normal
+style.css                 -> identidad visual roja-negra
+script.js                 -> comportamiento, eventos y demas fallos
+images/                   -> activos oficiales
+img-meazel/               -> activos no oficiales
+```
+
+---
+
+## DESPLIEGUE L0CAL
+
+1. Clona el repositorio.
+2. Abre la carpeta en Visual Studio Code.
+3. Lanza un servidor local. `Live Server` sirve. Casi siempre.
+4. Carga `index.html`.
+5. Si todo sale bien, veras Weazel News.
+6. Si todo sale mal, tambien.
+
+```bash
+git clone https://github.com/tu-usuario/weazel-news-web.git
+```
+
+Notas de operacion:
+
+- Algunos formularios necesitan conexion a internet.
+- Algunas rutas parecen tranquilas hasta que cambian solas.
+- Si una pagina no carga, espera. Si carga sin que la abras, no esperes.
+
+---
+
+## LOG DE ARRANQE
+
 <details>
-<summary><code>► Desplegar log de errores (sys.err_007)</code></summary>
-<br>
-[INFO] Cargando módulos base... OK.
-[INFO] Conectando con servidor DNS... OK.
-[WARN] Latencia detectada en el sector 4.
-[ERR] Fallo de redundancia en nodo 7.
-<sub><sup>E̷r̷r̷o̷r̷ ̷d̷e̷ ̷s̷i̷n̷t̷a̷x̷i̷s̷.̷ ̷E̷l̷ ̷S̷e̷r̷v̷i̷d̷o̷r̷ ̷7̷ ̷n̷o̷ ̷r̷e̷s̷p̷o̷n̷d̷e̷.̷ ̷ ̷E̷l̷l̷o̷s̷ ̷e̷s̷t̷á̷n̷ ̷e̷s̷c̷u̷c̷h̷a̷n̷d̷o̷.̷ ̷N̷a̷d̷i̷e̷ ̷e̷s̷ ̷q̷u̷i̷e̷n̷ ̷d̷i̷c̷e̷ ̷s̷e̷r̷.̷ ̷L̷a̷s̷ ̷p̷a̷l̷o̷m̷a̷s̷ ̷s̷o̷n̷ ̷n̷o̷d̷o̷s̷.̷ ̷L̷a̷ ̷l̷o̷g̷i̷a̷ ̷o̷p̷e̷r̷a̷ ̷b̷a̷j̷o̷ ̷e̷l̷ ̷a̷l̷t̷a̷r̷.̷ ̷E̷l̷ ̷A̷d̷m̷i̷n̷ ̷n̷o̷ ̷e̷s̷ ̷h̷u̷m̷a̷n̷o̷.̷</sup></sub>
-[FATAL ERROR: OMEGA_PROTOCOL_ACTIVE]
-[KERNEL_PANIC] Iniciando volcado de memoria física...
-<code>...T_R_U_S_T__N_O__O_N_E...</code><br>
-<code><a href="meazel-news.html" style="color: inherit; text-decoration: none;">>> [INICIALIZAR_MEAZEL.EXE]</a></code>
+<summary><code>mostrar sys.log_corrupt</code></summary>
+
+```txt
+[BOOT] Inicializando interfaz publica...
+[OK] Tema rojo cargado.
+[OK] Cabecera editorial cargada.
+[WARN] Fuente secundaria responde con retardo.
+[WARN] Hay nodos reflejados en la cache.
+[ERR] checksum README no coincide con README
+[ERR] sector /meazel/ responde antes de ser llamado
+[INFO] reconectando con servidor_7...
+[FAIL] reconectando con servidor_7...
+[FAIL] reconectando con servidor_7...
+[OK?] reconectando con servidor_7...
+[.....] palomas detectadas en el perimetro
+[.....] palomas detectadas dentro del perimetro
+[ADMIN] nadie ha iniciado sesion y sin embargo hay una sesion abierta
+[OMEGA] protocolo activo
+```
+
 </details>
-<br>
-© 2026 Weazel News. La verdad, al alcance de tu mano.
+
+---
+
+## AVISOS NORMALES Y N0RMALES
+
+- No editar a solas el contenido relacionado con `meazel`.
+- No confiar en mensajes que aparezcan con tipografia de terminal verde.
+- No repetir tres veces `sys.err_` en voz alta frente a la pantalla.
+- No asumir que el README mas reciente es el correcto.
+- No asumir que este README es el mas reciente.
+
+---
+
+## FAQ?
+
+**P: La web esta rota?**  
+R: no exactamnte.
+
+**P: Por que hay errores ortograficos?**  
+R: degradacion del canal, copia defectuosa o prisa. Elija la que le deje dormir.
+
+**P: Que parte del proyecto es canon?**  
+R: la portada. probablemente. tal vez.
+
+**P: Se puede usar con normalidad?**  
+R: si. con normalidad relativa.
+
+---
+
+## ESTADO
+
+```txt
+frontend..................... activo
+navegacion................... activo
+panel interno................ activo
+consistencia narrativa....... degradandose
+integridad documental........ [NULL]
+servidor 7................... escucha
+```
+
+---
+
+## CIERRE
+
+Weazel News sigue emitiendo.
+La verdad sigue al alcance de tu mano.
+La mano no siempre es tuya.
+
+<sub>ultima verificacion registrada: 21/04/2026 03:17:44</sub>
