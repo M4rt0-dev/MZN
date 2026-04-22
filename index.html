@@ -559,6 +559,328 @@
             80% { transform: translate(1px, -2px); text-shadow: -2px 0 red, 2px 0 blue; }
             100% { transform: translate(0); text-shadow: none; }
         }
+
+        /* ===== TICKER CORRUPTO ===== */
+        .corrupt-ticker {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.93);
+            border-top: 1px solid rgba(211, 47, 47, 0.45);
+            z-index: 1003;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-track {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker-scroll 90s linear infinite;
+            will-change: transform;
+        }
+
+        .ticker-chunk {
+            flex-shrink: 0;
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: #ff9e9e;
+            letter-spacing: 1.5px;
+            padding-right: 80px;
+        }
+
+        .ticker-track.ticker-glitch .ticker-chunk {
+            color: #ffd36f;
+            text-shadow: 2px 0 rgba(0, 255, 170, 0.65), -2px 0 rgba(211, 47, 47, 0.65);
+        }
+
+        .ticker-track.ticker-critical .ticker-chunk {
+            color: #7dffb2;
+            text-shadow: 2px 0 rgba(211, 47, 47, 0.5), -2px 0 rgba(0, 255, 170, 0.5);
+        }
+
+        @keyframes ticker-scroll {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
+        }
+
+        @keyframes bars-drift {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-14px); }
+            100% { transform: translateX(8px); }
+        }
+
+        @keyframes tear-sweep {
+            0% { top: 14%; transform: translateY(0) scaleY(0.4); }
+            45% { top: 42%; transform: translateY(0) scaleY(1); }
+            100% { top: 72%; transform: translateY(0) scaleY(0.55); }
+        }
+
+        /* ===== SEPARADOR CORRUPTO ===== */
+        .corrupt-divider {
+            margin: 2.4rem 0 1.8rem;
+            border: none;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .corrupt-divider::after {
+            content: attr(data-label);
+            position: absolute;
+            top: -0.65rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #111;
+            padding: 0 12px;
+            font-family: 'VT323', monospace;
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+
+        /* ===== ARTÍCULOS FANTASMA ===== */
+        .card-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            margin-bottom: 8px;
+            background: rgba(211, 47, 47, 0.15);
+            border: 1px solid rgba(211, 47, 47, 0.4);
+            color: #ff9e9e;
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .ghost-article {
+            border-top-color: rgba(211, 47, 47, 0.65) !important;
+            position: relative;
+        }
+
+        .ghost-article::before {
+            content: "ACCESO RESTRINGIDO";
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            font-family: 'VT323', monospace;
+            font-size: 0.82rem;
+            color: rgba(211, 47, 47, 0.38);
+            letter-spacing: 1px;
+            pointer-events: none;
+        }
+
+        .redacted-text {
+            display: inline;
+            background: rgba(255, 255, 255, 0.82);
+            color: transparent;
+            border-radius: 1px;
+            user-select: none;
+            letter-spacing: 0;
+        }
+
+        .ghost-article.ghost-purged {
+            opacity: 0.08;
+            filter: grayscale(1) blur(1px);
+            transition: opacity 0.3s ease, filter 0.3s ease;
+        }
+
+        .ghost-article.ghost-flicker {
+            animation: index-text-shift 0.2s steps(2, end) 3;
+            filter: saturate(1.4) contrast(1.2);
+        }
+
+        .ghost-article.ghost-redacted p {
+            color: transparent !important;
+            background: linear-gradient(90deg, rgba(255, 211, 111, 0.12), rgba(211, 47, 47, 0.08));
+            text-shadow: none;
+        }
+
+        #ghost-section-wrap {
+            margin-top: 1rem;
+        }
+
+        #ghost-section-wrap.section-rgb-split h2 {
+            text-shadow: 3px 0 rgba(211, 47, 47, 0.65), -3px 0 rgba(0, 255, 170, 0.65);
+            animation: index-text-shift 0.18s steps(2, end) 3;
+        }
+
+        /* ===== ESTÁTICA / STATIC BURST ===== */
+        .static-burst {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1800;
+            opacity: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.11'/%3E%3C/svg%3E");
+            background-size: 300px 300px;
+            mix-blend-mode: screen;
+            transition: opacity 0.06s ease;
+        }
+
+        .static-burst.static-on {
+            opacity: 1;
+        }
+
+        .chroma-bars,
+        .tear-line {
+            position: fixed;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .chroma-bars {
+            inset: 0;
+            z-index: 1802;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(211, 47, 47, 0.22) 0,
+                    rgba(211, 47, 47, 0.22) 2px,
+                    transparent 2px,
+                    transparent 36px,
+                    rgba(0, 255, 170, 0.18) 36px,
+                    rgba(0, 255, 170, 0.18) 38px,
+                    transparent 38px,
+                    transparent 72px
+                );
+            mix-blend-mode: screen;
+        }
+
+        .chroma-bars.bars-on {
+            opacity: 0.52;
+            animation: bars-drift 0.18s steps(2, end) 2;
+        }
+
+        .tear-line {
+            top: 16%;
+            height: 30px;
+            z-index: 1803;
+            background: linear-gradient(90deg, rgba(211, 47, 47, 0.95), rgba(255, 211, 111, 0.65), rgba(0, 255, 170, 0.95));
+            box-shadow: 0 0 18px rgba(211, 47, 47, 0.38);
+            transform: translateY(0) scaleY(0.6);
+            filter: blur(1.4px);
+        }
+
+        .tear-line.tear-active {
+            opacity: 0.82;
+            animation: tear-sweep 0.42s ease-out 1;
+        }
+
+        body.index-corrupted.phase-tear {
+            filter: contrast(1.08) saturate(1.16);
+        }
+
+        body.index-corrupted.phase-tear nav,
+        body.index-corrupted.phase-tear header,
+        body.index-corrupted.phase-tear main,
+        body.index-corrupted.phase-tear footer {
+            transform: skewX(-1.8deg) translateX(-4px);
+        }
+
+        .hero-ghosting h1,
+        .hero-ghosting p,
+        .hero-ghosting .alerta-roja {
+            text-shadow: 4px 0 rgba(211, 47, 47, 0.58), -4px 0 rgba(0, 255, 170, 0.46);
+            filter: blur(0.35px);
+        }
+
+        .nav-scramble {
+            transform: translateX(-5px) skewX(-4deg);
+            opacity: 0.82;
+        }
+
+        .nav-scramble li:nth-child(odd) {
+            transform: translateY(-1px);
+        }
+
+        .nav-scramble li:nth-child(even) {
+            transform: translateY(2px);
+        }
+
+        .signal-status.signal-jump {
+            transform: translate(8px, -3px);
+            box-shadow: -4px 0 0 rgba(0, 255, 170, 0.18), 4px 0 0 rgba(211, 47, 47, 0.2);
+        }
+
+        .bugged-card.card-inverted {
+            filter: invert(0.92) hue-rotate(168deg) contrast(1.06);
+        }
+
+        .main-bleed {
+            text-shadow: 2px 0 rgba(211, 47, 47, 0.28), -2px 0 rgba(0, 255, 170, 0.22);
+            filter: blur(0.22px);
+        }
+
+        /* ===== BANNER TRANSMISIÓN PERDIDA ===== */
+        .tx-lost-banner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1801;
+            font-family: 'VT323', monospace;
+            font-size: clamp(2.5rem, 7vw, 5.5rem);
+            color: rgba(211, 47, 47, 0.92);
+            text-shadow: 5px 0 rgba(0, 255, 170, 0.55), -5px 0 rgba(211, 47, 47, 0.55);
+            letter-spacing: 4px;
+            pointer-events: none;
+            white-space: nowrap;
+            animation: index-text-shift 0.14s steps(2, end) infinite;
+        }
+
+        .tx-lost-banner.tx-active {
+            display: block;
+        }
+
+        /* ===== NOTA DE ACCESO DENEGADO ===== */
+        .access-denied-block {
+            margin: 1.6rem 0 0;
+            padding: 12px 16px;
+            border-left: 3px solid rgba(211, 47, 47, 0.7);
+            background: rgba(211, 47, 47, 0.07);
+            font-family: 'VT323', monospace;
+            font-size: 1.18rem;
+            color: #ff9e9e;
+            letter-spacing: 0.8px;
+            line-height: 1.3;
+        }
+
+        .access-denied-block strong {
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .access-denied-block.denied-hidden {
+            opacity: 0.14;
+            filter: blur(0.5px);
+        }
+
+        /* ===== INDICADOR DE NODO ROTO ===== */
+        .node-badge {
+            display: inline-block;
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            padding: 2px 8px;
+            border: 1px solid rgba(255, 211, 111, 0.4);
+            color: #ffd36f;
+            background: rgba(255, 211, 111, 0.06);
+            letter-spacing: 1px;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        /* ===== GRID DE 3 COLUMNAS PARA GHOST ARTICLES ===== */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.2rem;
+        }
     </style>
 </head>
 <body class="index-corrupted">
@@ -620,6 +942,41 @@
                     <a href="#" class="btn">Ir a Anuncios</a>
                 </div>
             </div>
+
+            <hr class="corrupt-divider" data-label="// FRAGMENTOS RECUPERADOS DE CACHE NO VERIFICADA //">
+
+            <div id="ghost-section-wrap">
+                <h2 class="titulo-seccion data-loss shutdown-node" data-corrupt="4rch1v0s 1nt3rc3pt4d0s" id="ghost-title">
+                    Últimas noticias <span class="node-badge">CACHE DEGRADADA</span>
+                </h2>
+                <p class="main-copy shutdown-node" id="ghost-copy" style="opacity:0.72;font-size:0.95rem;">Los siguientes fragmentos han sido recuperados de una copia no verificada. Su autenticidad no puede ser garantizada. Algunos bloques han sido <span class="redacted-text">██████████</span> antes de llegar a este servidor.</p>
+
+                <div class="access-denied-block shutdown-node" id="access-denied-block">
+                    <strong>ACCESS_DENIED_007:</strong> se han suprimido 3 piezas de esta edición por orden de <span class="redacted-text">████████████████████</span>. El expediente ha sido transferido a un nodo externo no indexado.<br>
+                    <span class="error-stack" style="color:rgba(255,255,255,0.55);font-size:1rem;">internal.censor.route :: editorial.override :: origin: unknown</span>
+                </div>
+
+                <div class="grid-3" id="ghost-grid">
+                    <div class="card bugged-card ghost-article" data-bug="content_purged://noticia_01.bin" id="ghost-card-1">
+                        <span class="card-tag">EXCLUSIVA</span>
+                        <h3 class="data-loss" data-corrupt="[R3D4CT4D0]">Alcalde implicado en desvío de fondos municipales</h3>
+                        <p>Fuentes internas confirman irregularidades en los contratos de la Oficina de Planificación Urbana de Los Santos. El informe completo fue <span class="redacted-text">███████████████</span> horas antes de su publicación oficial.</p>
+                        <a href="#" class="btn">Leer más</a>
+                    </div>
+                    <div class="card bugged-card ghost-article" data-bug="integrity_check_failed://noticia_02.bin" id="ghost-card-2">
+                        <span class="card-tag">INVESTIGACIÓN</span>
+                        <h3 class="data-loss" data-corrupt="D4T0S B0RR4D0S">Vínculos entre altos cargos del LSPD y la Logia</h3>
+                        <p>Un testimonio anónimo señala a tres oficiales del LSPD. Los documentos aportados fueron <span class="redacted-text">███████████████</span> mediante orden judicial de carácter urgente y clasificado.</p>
+                        <a href="#" class="btn">Leer más</a>
+                    </div>
+                    <div class="card bugged-card ghost-article" data-bug="packet_loss://noticia_03.bin" id="ghost-card-3">
+                        <span class="card-tag">FILTRACIÓN</span>
+                        <h3 class="data-loss" data-corrupt="[S3ÑAL P3RD1DA]">Weazel News bajo presión externa para suprimir noticias</h3>
+                        <p>Directivos de esta cadena habrían recibido instrucciones de <span class="redacted-text">████████</span> para eliminar ciertas piezas. Este fragmento puede ser eliminado en cualquier momento sin previo aviso.</p>
+                        <a href="#" class="btn">Leer más</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -631,6 +988,22 @@
     <a href="meazel-news.html" class="corrupted-link shutdown-node" id="corrupted-link" title="SYS.ERR: OMEGA_PROTOCOL">
         <span class="glitch-text">>> sys.err_</span><span class="cursor-blink"></span>
     </a>
+
+    <!-- TICKER CORRUPTO -->
+    <div class="corrupt-ticker" id="corrupt-ticker" aria-hidden="true">
+        <div class="ticker-track" id="ticker-track">
+            <span class="ticker-chunk">▸ ARCHIVO CORRUPTO &nbsp;•&nbsp; DATOS CLASIFICADOS NO DISPONIBLES &nbsp;•&nbsp; SEÑAL INTERFERIDA :: PAQUETES PERDIDOS: 47 &nbsp;•&nbsp; NODO ESPEJO ACTIVO &nbsp;•&nbsp; FUENTE NO VERIFICADA &nbsp;•&nbsp; C4CH3 D4ÑAD4 &nbsp;•&nbsp; 3XP3D13NT3 007 :: 4CC3S0 D3N3G4D0 &nbsp;•&nbsp; T3ST1G0 PR0T3G1D0 N0 L0C4L1Z4D0 &nbsp;•&nbsp; W34Z3L N3WS :: NODO PÚBLICO COMPROMETIDO &nbsp;•&nbsp; ACC3SOS NO AUTORIZADOS DETECTADOS EN SERVIDOR 7 &nbsp;•&nbsp; LA TRANSM1SIÓN PUEDE ESTAR SIENDO MONITOREADA &nbsp;•&nbsp; BLOQUE EDITORIAL 03 :: ELIMINADO POR ORDEN DE &nbsp;<span class="redacted-text">████████</span>&nbsp; &nbsp;•&nbsp; REINICIO DE SEÑAL FALLIDO &nbsp;•&nbsp; CACHE RESIDUAL EN USO &nbsp;•&nbsp;</span>
+            <span class="ticker-chunk">▸ ARCHIVO CORRUPTO &nbsp;•&nbsp; DATOS CLASIFICADOS NO DISPONIBLES &nbsp;•&nbsp; SEÑAL INTERFERIDA :: PAQUETES PERDIDOS: 47 &nbsp;•&nbsp; NODO ESPEJO ACTIVO &nbsp;•&nbsp; FUENTE NO VERIFICADA &nbsp;•&nbsp; C4CH3 D4ÑAD4 &nbsp;•&nbsp; 3XP3D13NT3 007 :: 4CC3S0 D3N3G4D0 &nbsp;•&nbsp; T3ST1G0 PR0T3G1D0 N0 L0C4L1Z4D0 &nbsp;•&nbsp; W34Z3L N3WS :: NODO PÚBLICO COMPROMETIDO &nbsp;•&nbsp; ACC3SOS NO AUTORIZADOS DETECTADOS EN SERVIDOR 7 &nbsp;•&nbsp; LA TRANSM1SIÓN PUEDE ESTAR SIENDO MONITOREADA &nbsp;•&nbsp; BLOQUE EDITORIAL 03 :: ELIMINADO POR ORDEN DE &nbsp;<span class="redacted-text">████████</span>&nbsp; &nbsp;•&nbsp; REINICIO DE SEÑAL FALLIDO &nbsp;•&nbsp; CACHE RESIDUAL EN USO &nbsp;•&nbsp;</span>
+        </div>
+    </div>
+
+    <!-- BANNER TRANSMISIÓN PERDIDA -->
+    <div class="tx-lost-banner" id="tx-lost-banner" aria-hidden="true">TRANSMISIÓN PERDIDA</div>
+
+    <!-- ESTÁTICA VISUAL -->
+    <div class="static-burst" id="static-burst" aria-hidden="true"></div>
+    <div class="chroma-bars" id="chroma-bars" aria-hidden="true"></div>
+    <div class="tear-line" id="tear-line" aria-hidden="true"></div>
 
     <div class="fatal-overlay" id="fatal-overlay" aria-hidden="true">
         <div class="fatal-box">
@@ -678,6 +1051,17 @@
             const sectionTitle = document.getElementById('section-title');
             const cardExclusive = document.getElementById('card-exclusive');
             const cardAds = document.getElementById('card-ads');
+            const ghostCards = Array.from(document.querySelectorAll('.ghost-article'));
+            const ghostGrid = document.getElementById('ghost-grid');
+            const ghostSectionWrap = document.getElementById('ghost-section-wrap');
+            const ghostTitle = document.getElementById('ghost-title');
+            const ghostCopy = document.getElementById('ghost-copy');
+            const accessDeniedBlock = document.getElementById('access-denied-block');
+            const tickerTrack = document.getElementById('ticker-track');
+            const txLostBanner = document.getElementById('tx-lost-banner');
+            const staticBurst = document.getElementById('static-burst');
+            const chromaBars = document.getElementById('chroma-bars');
+            const tearLine = document.getElementById('tear-line');
             const rareRedirectUrl = 'https://m4rt0-dev.github.io/WZN/index.html';
             const statusMessages = [
                 { text: 'SEÑAL: estable // paquetes perdidos: 03', className: 'is-warning' },
@@ -754,23 +1138,37 @@
                 { value: 100, label: 'REINICIO EJECUTADO' }
             ];
             const glitchQueue = [
-                { action: triggerTextGlitch, minDelay: 900, maxDelay: 1800 },
-                { action: triggerCardDesync, minDelay: 1200, maxDelay: 2200 },
-                { action: triggerGhostCard, minDelay: 1400, maxDelay: 2600 },
-                { action: flickerScreen, minDelay: 2200, maxDelay: 3400 },
-                { action: rotateStatus, minDelay: 1500, maxDelay: 2500 },
-                { action: pulseWarningBlock, minDelay: 1800, maxDelay: 3000 },
-                { action: ruptureNav, minDelay: 2400, maxDelay: 3600 },
-                { action: triggerAmbientDistortion, minDelay: 1300, maxDelay: 2300 },
-                { action: corruptMainCopy, minDelay: 1600, maxDelay: 2800 },
-                { action: triggerLayoutFailure, minDelay: 2400, maxDelay: 4200 },
-                { action: triggerLogoPhase, minDelay: 1800, maxDelay: 3200 },
-                { action: triggerFooterEcho, minDelay: 2600, maxDelay: 4200 },
-                { action: triggerButtonJam, minDelay: 1700, maxDelay: 3100 },
-                { action: triggerCardWireframe, minDelay: 2100, maxDelay: 3600 },
-                { action: triggerGhostNavItem, minDelay: 3200, maxDelay: 5200 },
-                { action: triggerConsoleLeak, minDelay: 2400, maxDelay: 4600 },
-                { action: triggerCardCensor, minDelay: 2600, maxDelay: 4200 }
+                { action: triggerTextGlitch, minDelay: 260, maxDelay: 620 },
+                { action: triggerCardDesync, minDelay: 340, maxDelay: 760 },
+                { action: triggerGhostCard, minDelay: 380, maxDelay: 860 },
+                { action: flickerScreen, minDelay: 700, maxDelay: 1300 },
+                { action: rotateStatus, minDelay: 420, maxDelay: 900 },
+                { action: pulseWarningBlock, minDelay: 520, maxDelay: 1050 },
+                { action: ruptureNav, minDelay: 760, maxDelay: 1450 },
+                { action: triggerAmbientDistortion, minDelay: 360, maxDelay: 820 },
+                { action: corruptMainCopy, minDelay: 420, maxDelay: 980 },
+                { action: triggerLayoutFailure, minDelay: 820, maxDelay: 1500 },
+                { action: triggerLogoPhase, minDelay: 540, maxDelay: 1120 },
+                { action: triggerFooterEcho, minDelay: 820, maxDelay: 1560 },
+                { action: triggerButtonJam, minDelay: 460, maxDelay: 980 },
+                { action: triggerCardWireframe, minDelay: 640, maxDelay: 1260 },
+                { action: triggerGhostNavItem, minDelay: 1200, maxDelay: 2200 },
+                { action: triggerConsoleLeak, minDelay: 900, maxDelay: 1800 },
+                { action: triggerCardCensor, minDelay: 760, maxDelay: 1460 },
+                { action: triggerStaticBurst, minDelay: 180, maxDelay: 520 },
+                { action: triggerTxLostBanner, minDelay: 1800, maxDelay: 3400 },
+                { action: triggerGhostCardEffect, minDelay: 360, maxDelay: 780 },
+                { action: triggerGhostSectionRgb, minDelay: 900, maxDelay: 1800 },
+                { action: corruptTicker, minDelay: 380, maxDelay: 920 },
+                { action: triggerAccessDeniedFlash, minDelay: 720, maxDelay: 1500 },
+                { action: triggerGhostGridShift, minDelay: 980, maxDelay: 1850 },
+                { action: triggerChromaBars, minDelay: 340, maxDelay: 760 },
+                { action: triggerTearLine, minDelay: 760, maxDelay: 1450 },
+                { action: triggerHeroGhosting, minDelay: 520, maxDelay: 980 },
+                { action: triggerNavScramble, minDelay: 700, maxDelay: 1320 },
+                { action: triggerSignalJump, minDelay: 320, maxDelay: 700 },
+                { action: triggerCardInvert, minDelay: 420, maxDelay: 880 },
+                { action: triggerPhaseTear, minDelay: 820, maxDelay: 1500 }
             ];
             let queueIndex = 0;
             let rebootLocked = false;
@@ -1229,7 +1627,13 @@
                     '[mirror-node] checksum drift detected in public shell',
                     '[omega-route] alternate channel standby: disabled until fault threshold',
                     '[renderer] stale frame promoted from cache layer 7',
-                    '[weazel-core] unresolved diff kept alive for public continuity'
+                    '[weazel-core] unresolved diff kept alive for public continuity',
+                    '[censor-node] editorial.override received :: 3 blocks suppressed',
+                    '[access-log] unauthorized read on expediente_007 :: source masked',
+                    '[integrity-check] ghost-article-02 :: hash mismatch :: serving cached copy',
+                    '[signal-router] public.feed redirect pending :: awaiting clearance from: ████████',
+                    '[ticker] injecting fallback content :: original payload rejected by filter',
+                    '[archive] classified segment detected in news-feed.bin :: quarantine active'
                 ];
                 const styles = [
                     'color:#ffd36f;font-family:monospace',
@@ -1253,6 +1657,177 @@
                 window.setTimeout(() => {
                     target.classList.remove('card-button-loss', 'card-censored');
                 }, 880);
+            }
+
+            function triggerStaticBurst() {
+                if (!staticBurst) {
+                    return;
+                }
+
+                staticBurst.classList.add('static-on');
+                window.setTimeout(() => {
+                    staticBurst.classList.remove('static-on');
+                }, 120 + Math.floor(Math.random() * 180));
+            }
+
+            function triggerTxLostBanner() {
+                if (!txLostBanner || Math.random() > 0.35) {
+                    return;
+                }
+
+                txLostBanner.classList.add('tx-active');
+                window.setTimeout(() => {
+                    txLostBanner.classList.remove('tx-active');
+                }, 280 + Math.floor(Math.random() * 220));
+            }
+
+            function triggerGhostCardEffect() {
+                if (!ghostCards.length) {
+                    return;
+                }
+
+                const target = pickRandom(ghostCards);
+                const effects = ['ghost-purged', 'ghost-flicker', 'ghost-redacted'];
+                const chosen = pickRandom(effects);
+
+                target.classList.add(chosen);
+                window.setTimeout(() => {
+                    target.classList.remove(chosen);
+                }, chosen === 'ghost-purged' ? 600 : 380);
+            }
+
+            function triggerGhostSectionRgb() {
+                if (!ghostSectionWrap) {
+                    return;
+                }
+
+                ghostSectionWrap.classList.add('section-rgb-split');
+                window.setTimeout(() => {
+                    ghostSectionWrap.classList.remove('section-rgb-split');
+                }, 340);
+            }
+
+            function corruptTicker() {
+                if (!tickerTrack) {
+                    return;
+                }
+
+                const mode = Math.random();
+                if (mode < 0.5) {
+                    tickerTrack.classList.add('ticker-glitch');
+                    window.setTimeout(() => {
+                        tickerTrack.classList.remove('ticker-glitch');
+                    }, 480);
+                } else {
+                    tickerTrack.classList.add('ticker-critical');
+                    window.setTimeout(() => {
+                        tickerTrack.classList.remove('ticker-critical');
+                    }, 380);
+                }
+            }
+
+            function triggerAccessDeniedFlash() {
+                if (!accessDeniedBlock) {
+                    return;
+                }
+
+                accessDeniedBlock.classList.add('denied-hidden');
+                window.setTimeout(() => {
+                    accessDeniedBlock.classList.remove('denied-hidden');
+                }, 320);
+            }
+
+            function triggerGhostGridShift() {
+                if (!ghostGrid) {
+                    return;
+                }
+
+                ghostGrid.classList.add('layout-shift');
+                window.setTimeout(() => {
+                    ghostGrid.classList.remove('layout-shift');
+                }, 280);
+            }
+
+            function triggerChromaBars() {
+                if (!chromaBars) {
+                    return;
+                }
+
+                chromaBars.classList.add('bars-on');
+                window.setTimeout(() => {
+                    chromaBars.classList.remove('bars-on');
+                }, 260);
+            }
+
+            function triggerTearLine() {
+                if (!tearLine) {
+                    return;
+                }
+
+                tearLine.classList.add('tear-active');
+                window.setTimeout(() => {
+                    tearLine.classList.remove('tear-active');
+                }, 440);
+            }
+
+            function triggerHeroGhosting() {
+                if (!header) {
+                    return;
+                }
+
+                header.classList.add('hero-ghosting');
+                window.setTimeout(() => {
+                    header.classList.remove('hero-ghosting');
+                }, 360);
+            }
+
+            function triggerNavScramble() {
+                if (!navList) {
+                    return;
+                }
+
+                navList.classList.add('nav-scramble');
+                window.setTimeout(() => {
+                    navList.classList.remove('nav-scramble');
+                }, 340);
+            }
+
+            function triggerSignalJump() {
+                if (!signalStatus) {
+                    return;
+                }
+
+                signalStatus.classList.add('signal-jump');
+                window.setTimeout(() => {
+                    signalStatus.classList.remove('signal-jump');
+                }, 250);
+            }
+
+            function triggerCardInvert() {
+                const target = pickRandom(cardTargets);
+
+                if (!target) {
+                    return;
+                }
+
+                target.classList.add('card-inverted');
+                window.setTimeout(() => {
+                    target.classList.remove('card-inverted');
+                }, 240);
+            }
+
+            function triggerPhaseTear() {
+                document.body.classList.add('phase-tear');
+                if (pageMain) {
+                    pageMain.classList.add('main-bleed');
+                }
+
+                window.setTimeout(() => {
+                    document.body.classList.remove('phase-tear');
+                    if (pageMain) {
+                        pageMain.classList.remove('main-bleed');
+                    }
+                }, 320);
             }
 
             function rotateStatus() {
@@ -1320,6 +1895,22 @@
                 }
 
                 document.body.classList.add('screen-flicker', 'scan-burst', 'vignette-pulse');
+                triggerStaticBurst();
+                triggerChromaBars();
+                triggerTearLine();
+                window.setTimeout(triggerStaticBurst, 320);
+                window.setTimeout(triggerChromaBars, 460);
+                window.setTimeout(triggerStaticBurst, 720);
+                window.setTimeout(triggerTearLine, 860);
+                if (txLostBanner) {
+                    txLostBanner.classList.add('tx-active');
+                    window.setTimeout(() => {
+                        txLostBanner.classList.remove('tx-active');
+                    }, 1400);
+                }
+                if (tickerTrack) {
+                    tickerTrack.classList.add('ticker-critical');
+                }
                 if (header) {
                     header.classList.add('header-fault');
                 }
@@ -1327,7 +1918,7 @@
                     mainSection.classList.add('layout-shift');
                 }
 
-                const shutdownSequence = [signalStatus, nav, header, pageMain, pageFooter, corruptedLink].filter(Boolean);
+                const shutdownSequence = [signalStatus, nav, header, pageMain, pageFooter, corruptedLink, ...ghostCards].filter(Boolean);
 
                 progressStates.forEach((state, index) => {
                     window.setTimeout(() => {
@@ -1364,7 +1955,7 @@
 
             applyPendingRebootMutations();
             triggerAmbientDistortion();
-            window.setTimeout(runGlitchLoop, 900);
+            window.setTimeout(runGlitchLoop, 260);
             window.setTimeout(startFatalRestartSequence, 39800);
         });
     </script>
