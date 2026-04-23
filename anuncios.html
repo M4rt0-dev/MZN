@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weazel News | Anuncios Locales</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <style>
+        .img-anuncio {
+            width: 100%;
+            height: 200px; /* Fija una altura uniforme para todas las imágenes */
+            object-fit: cover; /* Evita que la imagen se deforme */
+            border-radius: 3px;
+            margin-bottom: 15px;
+            border: 1px solid #333;
+        }
+        header, .small-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('./images/weazel-news.png') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){ emailjs.init("ERhS_42VHBVxNpsCQ"); })();
+    </script>
+</head>
+<body class="index-clean-boot">
+
+    <div class="signal-status is-warning" id="signal-status" hidden>
+        <strong>SEÑAL:</strong> estable // paquetes perdidos: 03
+    </div>
+
+    <nav class="shutdown-node" id="main-nav">
+        <a href="index.html" class="logo">WEAZEL NEWS</a>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            
+            <!-- MENÚ DESPLEGABLE -->
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Contenido ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="periodicos.html">Periódicos</a></li>
+                    <li><a href="revista.html">Revista</a></li>
+                    <li><a href="podcasts.html">Podcasts</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                </ul>
+            </li>
+            <!-- FIN MENÚ DESPLEGABLE -->
+
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="portal.html">Portal Empleado</a></li>
+            <li><a href="anuncios.html" class="activo">Anuncios Locales</a></li>
+            <li><a href="tarifas.html">Tarifas</a></li>
+            <li><a href="sugerencias.html">Sugerencias</a></li>
+        </ul>
+    </nav>
+
+    <header class="small-header shutdown-node" id="hero-header">
+        <span class="alerta-roja">CLASIFICADOS DE LOS SANTOS</span>
+        <h1>Tablón de Anuncios</h1>
+    </header>
+
+    <main class="shutdown-node" id="page-main">
+        <section>
+            <h2 class="titulo-seccion">Negocios y Servicios Locales</h2>
+            <div class="grid">
+
+                <div class="card">
+                    <img src="./anuncios/img1.png" alt="PDM Élite" style="width: 100%; height: auto; border-radius: 8px 8px 0 0;">
+                    
+                    <div class="card-content" style="padding: 20px;">
+                        <h3>¡PDM ÉLITE COMPRA-VENTA, CALIDAD ASEGURADA!</h3>
+                        <p>En PDM Élite transformamos tu forma de conducir con los mejores seminuevos e importados. ¡Ven y encuentra el vehículo de tus sueños con la garantía del concesionario más exclusivo!</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./anuncios/img2.png" alt="PDM Élite" style="width: 100%; height: auto; border-radius: 8px 8px 0 0;">
+                    
+                    <div class="card-content" style="padding: 20px;">
+                        <h3>¡DIAMOND CASINO, LUJO SIN LÍMITES!</h3>
+                        <p>Vive la exclusividad en el corazón de Los Santos: donde la fortuna y el lujo se encuentran. ¡Haz tu apuesta hoy y descubre por qué somos el destino más brillante de la ciudad!</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./anuncios/img3.png" alt="PDM Élite" style="width: 100%; height: auto; border-radius: 8px 8px 0 0;">
+                    
+                    <div class="card-content" style="padding: 20px;">
+                        <h3>¡AUTO SHOP, EL TALLER LÍDER!</h3>
+                    <p>El taller líder de Los Santos garantiza que tu motor siempre esté a punto para la acción. ¡Ven con los mejores y deja que los profesionales se encarguen del resto!</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Espacio para anunciarte 4</h3>
+                    <p>Este espacio publicitario se encuentra actualmente libre. Destaca tu negocio o servicio y llega a miles de ciudadanos de Los Santos a diario.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Espacio para anunciarte 5</h3>
+                    <p>Este espacio publicitario se encuentra actualmente libre. Destaca tu negocio o servicio y llega a miles de ciudadanos de Los Santos a diario.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Espacio para anunciarte 6</h3>
+                    <p>Este espacio publicitario se encuentra actualmente libre. Destaca tu negocio o servicio y llega a miles de ciudadanos de Los Santos a diario.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h2 class="titulo-seccion">Publica tu Anuncio</h2>
+            <div class="card">
+                <p style="margin-bottom: 20px; color: var(--texto-gris);">
+                    Rellena el siguiente formulario para que nuestro departamento comercial apruebe tu anuncio y aparezca en la portada de Weazel News. Coste de publicación: $1000 por semana.
+                </p>
+                <form id="form-buzon1">
+                    <input type="text" name="nombre" placeholder="Nombre de tu empresa o particular" required>
+                    <input type="tel" name="telefono" placeholder="Número de teléfono de contacto" required>
+                    <input type="text" name="titulo" placeholder="Título corto y llamativo para tu anuncio" required>
+                    <textarea name="descripcion" rows="5" placeholder="Escribe aquí la descripción detallada de tu servicio o producto..." required></textarea>
+                    
+                    <button type="submit" class="btn">Enviar solicitud de publicación</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="shutdown-node" id="page-footer">
+        <h2>WEAZEL NEWS</h2>
+        <p>&copy; 2026 Weazel News Los Santos EVO. La verdad, al alcance de tu mano.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- CORRUPTION ENGINE FIXTURES -->
+    <div class="corrupt-ticker" id="corrupt-ticker" aria-hidden="true" hidden>
+        <div class="ticker-track" id="ticker-track">
+            <span class="ticker-chunk">▸ ARCHIVO CORRUPTO &nbsp;•&nbsp; DATOS CLASIFICADOS NO DISPONIBLES &nbsp;•&nbsp; SEÑAL INTERFERIDA :: PAQUETES PERDIDOS: 47 &nbsp;•&nbsp; NODO ESPEJO ACTIVO &nbsp;•&nbsp; FUENTE NO VERIFICADA &nbsp;•&nbsp; C4CH3 D4ÑAD4 &nbsp;•&nbsp; 3XP3D13NT3 007 :: 4CC3S0 D3N3G4D0 &nbsp;•&nbsp; W34Z3L N3WS :: NODO PÚBLICO COMPROMETIDO &nbsp;•&nbsp; ACC3SOS NO AUTORIZADOS DETECTADOS EN SERVIDOR 7 &nbsp;•&nbsp; BLOQUE EDITORIAL 03 :: ELIMINADO POR ORDEN DE &nbsp;<span class="redacted-text">████████</span>&nbsp; &nbsp;•&nbsp; CACHE RESIDUAL EN USO &nbsp;•&nbsp;</span>
+            <span class="ticker-chunk">▸ ARCHIVO CORRUPTO &nbsp;•&nbsp; DATOS CLASIFICADOS NO DISPONIBLES &nbsp;•&nbsp; SEÑAL INTERFERIDA :: PAQUETES PERDIDOS: 47 &nbsp;•&nbsp; NODO ESPEJO ACTIVO &nbsp;•&nbsp; FUENTE NO VERIFICADA &nbsp;•&nbsp; C4CH3 D4ÑAD4 &nbsp;•&nbsp; 3XP3D13NT3 007 :: 4CC3S0 D3N3G4D0 &nbsp;•&nbsp; W34Z3L N3WS :: NODO PÚBLICO COMPROMETIDO &nbsp;•&nbsp; ACC3SOS NO AUTORIZADOS DETECTADOS EN SERVIDOR 7 &nbsp;•&nbsp; BLOQUE EDITORIAL 03 :: ELIMINADO POR ORDEN DE &nbsp;<span class="redacted-text">████████</span>&nbsp; &nbsp;•&nbsp; CACHE RESIDUAL EN USO &nbsp;•&nbsp;</span>
+        </div>
+    </div>
+    <div class="tx-lost-banner" id="tx-lost-banner" aria-hidden="true">TRANSMISIÓN PERDIDA</div>
+    <div class="static-burst" id="static-burst" aria-hidden="true"></div>
+    <div class="chroma-bars" id="chroma-bars" aria-hidden="true"></div>
+    <div class="tear-line" id="tear-line" aria-hidden="true"></div>
+    <div class="fatal-overlay" id="fatal-overlay" aria-hidden="true">
+        <div class="fatal-box">
+            <h2>ERROR FATAL // REINICIANDO SEÑAL</h2>
+            <p>Se ha detectado una corrupcion critica en el nodo publico de WEAZEL NEWS.</p>
+            <p>Intentando restaurar la cache editorial y reiniciar el flujo de emision...</p>
+            <div class="fatal-progress">
+                <div class="fatal-progress-label">
+                    <span id="fatal-progress-text">REINICIO CORRUPTO</span>
+                    <span id="fatal-progress-value">0%</span>
+                </div>
+                <div class="fatal-progress-bar">
+                    <div class="fatal-progress-fill" id="fatal-progress-fill"></div>
+                </div>
+            </div>
+            <div class="fatal-log" id="fatal-log">panic.render.core :: memory access violation :: reboot in progress</div>
+        </div>
+    </div>
+    <a href="meazel-news.html" class="corrupted-link shutdown-node" id="corrupted-link" title="SYS.ERR: OMEGA_PROTOCOL">
+        <span class="glitch-text">&gt;&gt; sys.err_</span><span class="cursor-blink"></span>
+    </a>
+    <script src="corruption-pages.js"></script>
+</body>
+</html>

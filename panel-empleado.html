@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+    <title>Panel de Fichajes | Weazel News</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        header, .small-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('./images/weazel-news.png') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">WEAZEL NEWS</a>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            
+            <!-- MENÚ DESPLEGABLE -->
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Contenido ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="periodicos.html">Periódicos</a></li>
+                    <li><a href="revista.html">Revista</a></li>
+                    <li><a href="podcasts.html">Podcasts</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                </ul>
+            </li>
+            <!-- FIN MENÚ DESPLEGABLE -->
+
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="portal.html">Portal Empleado</a></li>
+            <li><a href="anuncios.html">Anuncios Locales</a></li>
+            <li><a href="tarifas.html">Tarifas</a></li>
+            <li><a href="sugerencias.html">Sugerencias</a></li>
+        </ul>
+    </nav>
+    <header class="small-header">
+        <h1>Panel de Control</h1>
+    </header>
+    <main id="panel-fichaje">
+        <section>
+            <div class="card" style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <h2 style="color: white;">Bienvenido/a, <span id="nombre-empleado-display" style="color: var(--rojo-weazel);"></span></h2>
+                <p>Sistema de registro de jornada laboral.</p>
+                
+                <div class="horas-box">
+                    Horas Semanales:<br>
+                    <span id="horas-semana">0h 0m</span>
+                </div>
+
+                <button id="btn-fichaje" class="btn" style="width: 80%; font-size: 1.5rem; padding: 20px; margin-bottom: 10px;">ENTRAR DE SERVICIO</button>
+                <p id="estado-servicio" style="margin-bottom: 20px;">⚫ Fuera de servicio</p>
+
+                <button id="btn-logout" class="btn btn-logout" style="width: 40%;">Cerrar Sesión</button>
+            </div>
+        </section>
+    </main>
+    <footer><h2>WEAZEL NEWS</h2></footer>
+</body>
+</html>

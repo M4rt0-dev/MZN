@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal | Weazel News</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){ emailjs.init("ERhS_42VHBVxNpsCQ"); })();
+    </script>
+    <script src="script.js"></script>
+    <style>
+        header, .small-header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('./images/weazel-news.png') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+    </style>
+</head>
+<body class="index-clean-boot">
+    <div class="signal-status is-warning" id="signal-status" hidden><strong>SEÑAL:</strong> estable // paquetes perdidos: 03</div>
+    <nav class="shutdown-node" id="main-nav">
+        <a href="index.html" class="logo">WEAZEL NEWS</a>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            
+            <!-- MENÚ DESPLEGABLE -->
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Contenido ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="periodicos.html">Periódicos</a></li>
+                    <li><a href="revista.html">Revista</a></li>
+                    <li><a href="podcasts.html">Podcasts</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                </ul>
+            </li>
+            <!-- FIN MENÚ DESPLEGABLE -->
+
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="portal.html" class="activo">Portal Empleado</a></li>
+            <li><a href="anuncios.html">Anuncios Locales</a></li>
+            <li><a href="tarifas.html">Tarifas</a></li>
+            <li><a href="sugerencias.html">Sugerencias</a></li>
+        </ul>
+    </nav>
+    <header class="small-header shutdown-node" id="hero-header">
+        <h1>Servicios Internos</h1>
+    </header>
+    <main class="shutdown-node" id="page-main">
+        <section class="grid">
+            <div class="card" style="border: 2px dashed var(--rojo-weazel); text-align: center;">
+                <h2>⚠️ Acceso Personal</h2>
+                <p>Identifícate para acceder al sistema de fichajes de Weazel News.</p>
+                <br>
+                <form id="form-login">
+                    <input type="text" id="login-user" placeholder="Usuario / Nombre Empleado" required style="width: 80%;">
+                    <input type="password" id="login-pass" placeholder="Contraseña" required style="width: 80%;">
+                    <button type="submit" class="btn" style="width: 80%; font-size: 1.2rem; padding: 10px;">INICIAR SESIÓN</button>
+                </form>
+            </div>
+            <div class="card">
+                <h2>🕵️‍♂️ Buzón Anónimo (Ciudadanos)</h2>
+                <p>¿Has visto algo ilegal o tienes una primicia? Envíanos un correo anónimo.</p>
+                <br>
+                <form id="form-buzon">
+                    <input type="text" name="asunto" placeholder="Asunto (Ej: Armas en Grove St)" required>
+                    <textarea name="mensaje" rows="5" placeholder="Describe lo que has visto detalladamente..." required></textarea>
+                    <input type="text" name="adjunto" placeholder="Adjuntar enlace a foto/vídeo o pruebas de otro tipo">
+                    <button type="submit" class="btn" style="width: 100%;">Enviar Correo a Redacción</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="shutdown-node" id="page-footer">
+        <h2>WEAZEL NEWS</h2>
+        <p>&copy; 2026 Weazel News Los Santos EVO. La verdad, al alcance de tu mano.</p>
+    </footer>
+
+    <!-- CORRUPTION ENGINE FIXTURES -->
+    <div class="corrupt-ticker" id="corrupt-ticker" aria-hidden="true" hidden>
+        <div class="ticker-track" id="ticker-track">
+            <span class="ticker-chunk">▸ ARCHIVO CORRUPTO &nbsp;•&nbsp; DATOS CLASIFICADOS NO DISPONIBLES &nbsp;•&nbsp; SEÑAL INTERFERIDA :: PAQUETES PERDIDOS: 47 &nbsp;•&nbsp; NODO ESPEJO ACTIVO &nbsp;•&nbsp; W34Z3L N3WS :: NODO PÚBLICO COMPROMETIDO &nbsp;•&nbsp; CACHE RESIDUAL EN USO &nbsp;•&nbsp;</span>
+            <span class="ticker-chunk">▸ ARCHIVO CORRUPTO &nbsp;•&nbsp; DATOS CLASIFICADOS NO DISPONIBLES &nbsp;•&nbsp; SEÑAL INTERFERIDA :: PAQUETES PERDIDOS: 47 &nbsp;•&nbsp; NODO ESPEJO ACTIVO &nbsp;•&nbsp; W34Z3L N3WS :: NODO PÚBLICO COMPROMETIDO &nbsp;•&nbsp; CACHE RESIDUAL EN USO &nbsp;•&nbsp;</span>
+        </div>
+    </div>
+    <div class="tx-lost-banner" id="tx-lost-banner" aria-hidden="true">TRANSMISIÓN PERDIDA</div>
+    <div class="static-burst" id="static-burst" aria-hidden="true"></div>
+    <div class="chroma-bars" id="chroma-bars" aria-hidden="true"></div>
+    <div class="tear-line" id="tear-line" aria-hidden="true"></div>
+    <div class="fatal-overlay" id="fatal-overlay" aria-hidden="true">
+        <div class="fatal-box">
+            <h2>ERROR FATAL // REINICIANDO SEÑAL</h2>
+            <p>Se ha detectado una corrupcion critica en el nodo publico de WEAZEL NEWS.</p>
+            <p>Intentando restaurar la cache editorial y reiniciar el flujo de emision...</p>
+            <div class="fatal-progress">
+                <div class="fatal-progress-label"><span id="fatal-progress-text">REINICIO CORRUPTO</span><span id="fatal-progress-value">0%</span></div>
+                <div class="fatal-progress-bar"><div class="fatal-progress-fill" id="fatal-progress-fill"></div></div>
+            </div>
+            <div class="fatal-log" id="fatal-log">panic.render.core :: memory access violation :: reboot in progress</div>
+        </div>
+    </div>
+    <a href="meazel-news.html" class="corrupted-link shutdown-node" id="corrupted-link" title="SYS.ERR: OMEGA_PROTOCOL"><span class="glitch-text">&gt;&gt; sys.err_</span><span class="cursor-blink"></span></a>
+    <script src="corruption-pages.js"></script>
+</body>
+</html>

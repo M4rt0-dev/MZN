@@ -883,34 +883,34 @@
         }
     </style>
 </head>
-<body class="index-corrupted">
-    <div class="signal-status is-warning" id="signal-status">
+<body class="index-clean-boot">
+    <div class="signal-status is-warning" id="signal-status" hidden>
         <strong>SEÑAL:</strong> estable // paquetes perdidos: 03
     </div>
 
-    <nav class="shutdown-node" id="main-nav">
-        <a href="#" class="logo">WEAZEL NEWS</a>
+    <nav>
+        <a href="index.html" class="logo">WEAZEL NEWS</a>
         <ul>
-            <li><a href="#" class="activo">Inicio</a></li>
+            <li><a href="index.html" class="activo">Inicio</a></li>
             
             <!-- MENÚ DESPLEGABLE -->
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Contenido ▼</a>
                 <ul class="dropdown-content">
-                    <li><a href="#">Periódicos</a></li>
-                    <li><a href="#">Revista</a></li>
-                    <li><a href="#">Podcasts</a></li>
-                    <li><a href="#">Eventos</a></li>
-                    <li><a href="#">Galería</a></li>
+                    <li><a href="periodicos.html">Periódicos</a></li>
+                    <li><a href="revista.html">Revista</a></li>
+                    <li><a href="podcasts.html">Podcasts</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
                 </ul>
             </li>
             <!-- FIN MENÚ DESPLEGABLE -->
 
-            <li><a href="#">Equipo</a></li>
-            <li><a href="#">Portal Empleado</a></li>
-            <li><a href="#">Anuncios Locales</a></li>
-            <li><a href="#">Tarifas</a></li>
-            <li><a href="#">Sugerencias</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="portal.html">Portal Empleado</a></li>
+            <li><a href="anuncios.html">Anuncios Locales</a></li>
+            <li><a href="tarifas.html">Tarifas</a></li>
+            <li><a href="sugerencias.html">Sugerencias</a></li>
         </ul>
     </nav>
 
@@ -924,11 +924,11 @@
         <section id="main-section">
             <h2 class="titulo-seccion data-loss" data-corrupt="B13nv3n1d0s 4 W34z3l N3ws" id="section-title">Bienvenidos a Weazel News</h2>
             <p class="main-copy" id="main-copy">La principal cadena de noticias de Los Santos. Navega por nuestro menú superior para leer las últimas ediciones de nuestros periódicos, escuchar los podcasts más polémicos de la ciudad o enterarte de los próximos eventos.</p>
-            <div class="loading-error">
+            <div class="loading-error" hidden>
                 <strong>WARN_004:</strong> error parcial al cargar modulos editoriales.
                 <span class="error-stack" id="error-stack">fallback.render.header() -> timeout -> using cached copy from 03:17</span>
             </div>
-            <p class="refresh-warning">RECARGA AUTOMATICA PROGRAMADA CADA 45s PARA INTENTAR RESTABLECER LA SEÑAL.</p>
+            <p class="refresh-warning" hidden>RECARGA AUTOMATICA PROGRAMADA CADA 45s PARA INTENTAR RESTABLECER LA SEÑAL.</p>
             <br>
             <div class="grid">
                 <div class="card bugged-card" data-bug="asset_missing://news-feed.bin" id="card-exclusive">
@@ -945,7 +945,7 @@
 
             <hr class="corrupt-divider" data-label="// FRAGMENTOS RECUPERADOS DE CACHE NO VERIFICADA //">
 
-            <div id="ghost-section-wrap">
+            <div id="ghost-section-wrap" hidden>
                 <h2 class="titulo-seccion data-loss shutdown-node" data-corrupt="4rch1v0s 1nt3rc3pt4d0s" id="ghost-title">
                     Últimas noticias <span class="node-badge">CACHE DEGRADADA</span>
                 </h2>
@@ -990,7 +990,7 @@
     </a>
 
     <!-- TICKER CORRUPTO -->
-    <div class="corrupt-ticker" id="corrupt-ticker" aria-hidden="true">
+    <div class="corrupt-ticker" id="corrupt-ticker" aria-hidden="true" hidden>
         <div class="ticker-track" id="ticker-track">
             <span class="ticker-chunk">▸ ARCHIVO CORRUPTO &nbsp;•&nbsp; DATOS CLASIFICADOS NO DISPONIBLES &nbsp;•&nbsp; SEÑAL INTERFERIDA :: PAQUETES PERDIDOS: 47 &nbsp;•&nbsp; NODO ESPEJO ACTIVO &nbsp;•&nbsp; FUENTE NO VERIFICADA &nbsp;•&nbsp; C4CH3 D4ÑAD4 &nbsp;•&nbsp; 3XP3D13NT3 007 :: 4CC3S0 D3N3G4D0 &nbsp;•&nbsp; T3ST1G0 PR0T3G1D0 N0 L0C4L1Z4D0 &nbsp;•&nbsp; W34Z3L N3WS :: NODO PÚBLICO COMPROMETIDO &nbsp;•&nbsp; ACC3SOS NO AUTORIZADOS DETECTADOS EN SERVIDOR 7 &nbsp;•&nbsp; LA TRANSM1SIÓN PUEDE ESTAR SIENDO MONITOREADA &nbsp;•&nbsp; BLOQUE EDITORIAL 03 :: ELIMINADO POR ORDEN DE &nbsp;<span class="redacted-text">████████</span>&nbsp; &nbsp;•&nbsp; REINICIO DE SEÑAL FALLIDO &nbsp;•&nbsp; CACHE RESIDUAL EN USO &nbsp;•&nbsp;</span>
             <span class="ticker-chunk">▸ ARCHIVO CORRUPTO &nbsp;•&nbsp; DATOS CLASIFICADOS NO DISPONIBLES &nbsp;•&nbsp; SEÑAL INTERFERIDA :: PAQUETES PERDIDOS: 47 &nbsp;•&nbsp; NODO ESPEJO ACTIVO &nbsp;•&nbsp; FUENTE NO VERIFICADA &nbsp;•&nbsp; C4CH3 D4ÑAD4 &nbsp;•&nbsp; 3XP3D13NT3 007 :: 4CC3S0 D3N3G4D0 &nbsp;•&nbsp; T3ST1G0 PR0T3G1D0 N0 L0C4L1Z4D0 &nbsp;•&nbsp; W34Z3L N3WS :: NODO PÚBLICO COMPROMETIDO &nbsp;•&nbsp; ACC3SOS NO AUTORIZADOS DETECTADOS EN SERVIDOR 7 &nbsp;•&nbsp; LA TRANSM1SIÓN PUEDE ESTAR SIENDO MONITOREADA &nbsp;•&nbsp; BLOQUE EDITORIAL 03 :: ELIMINADO POR ORDEN DE &nbsp;<span class="redacted-text">████████</span>&nbsp; &nbsp;•&nbsp; REINICIO DE SEÑAL FALLIDO &nbsp;•&nbsp; CACHE RESIDUAL EN USO &nbsp;•&nbsp;</span>
@@ -1037,6 +1037,7 @@
             const corruptedLink = document.getElementById('corrupted-link');
             const loadingError = document.querySelector('.loading-error');
             const errorStack = document.getElementById('error-stack');
+            const refreshWarning = document.querySelector('.refresh-warning');
             const mainCopy = document.getElementById('main-copy');
             const mainSection = document.getElementById('main-section');
             const logo = document.querySelector('.logo');
@@ -1057,6 +1058,7 @@
             const ghostTitle = document.getElementById('ghost-title');
             const ghostCopy = document.getElementById('ghost-copy');
             const accessDeniedBlock = document.getElementById('access-denied-block');
+            const corruptTicker = document.getElementById('corrupt-ticker');
             const tickerTrack = document.getElementById('ticker-track');
             const txLostBanner = document.getElementById('tx-lost-banner');
             const staticBurst = document.getElementById('static-burst');
@@ -1170,8 +1172,18 @@
                 { action: triggerCardInvert, minDelay: 420, maxDelay: 880 },
                 { action: triggerPhaseTear, minDelay: 820, maxDelay: 1500 }
             ];
+            const INITIAL_CLEAN_DURATION_MS = 20000;
+            const SECONDARY_REVEAL_DELAY_MS = 55000;
+            const FIRST_RESTART_DELAY_MS = 180000;
+            const corruptionPhases = [
+                { until: 60000, actionChance: 0.2, delayMultiplier: 3.4 },
+                { until: 120000, actionChance: 0.45, delayMultiplier: 2.1 },
+                { until: 180000, actionChance: 0.78, delayMultiplier: 1.25 },
+                { until: Infinity, actionChance: 1, delayMultiplier: 1 }
+            ];
             let queueIndex = 0;
             let rebootLocked = false;
+            const bootTime = Date.now();
 
             function applyPendingRebootMutations() {
                 const raw = window.sessionStorage.getItem('index-reboot-mutations');
@@ -1368,6 +1380,39 @@
 
             function nextDelay(minDelay, maxDelay) {
                 return minDelay + Math.floor(Math.random() * (maxDelay - minDelay + 1));
+            }
+
+            function revealElement(element) {
+                if (element) {
+                    element.hidden = false;
+                }
+            }
+
+            function activatePrimaryCorruptionLayer() {
+                document.body.classList.remove('index-clean-boot');
+                document.body.classList.add('index-corrupted', 'corruption-stage-1');
+                revealElement(signalStatus);
+                revealElement(loadingError);
+                revealElement(refreshWarning);
+            }
+
+            function activateSecondaryCorruptionLayer() {
+                document.body.classList.add('corruption-stage-2');
+                revealElement(ghostSectionWrap);
+                revealElement(corruptedLink);
+                revealElement(corruptTicker);
+            }
+
+            function getCurrentCorruptionPhase() {
+                const elapsed = Date.now() - bootTime;
+
+                for (const phase of corruptionPhases) {
+                    if (elapsed < phase.until) {
+                        return phase;
+                    }
+                }
+
+                return corruptionPhases[corruptionPhases.length - 1];
             }
 
             function triggerTextGlitch() {
@@ -1849,11 +1894,17 @@
                 }
 
                 const current = glitchQueue[queueIndex % glitchQueue.length];
+                const phase = getCurrentCorruptionPhase();
                 queueIndex += 1;
 
-                current.action();
+                if (Math.random() <= phase.actionChance) {
+                    current.action();
+                }
 
-                window.setTimeout(runGlitchLoop, nextDelay(current.minDelay, current.maxDelay));
+                const minDelay = Math.max(160, Math.floor(current.minDelay * phase.delayMultiplier));
+                const maxDelay = Math.max(minDelay, Math.floor(current.maxDelay * phase.delayMultiplier));
+
+                window.setTimeout(runGlitchLoop, nextDelay(minDelay, maxDelay));
             }
 
             function executeRestartOutcome() {
@@ -1954,9 +2005,10 @@
             }
 
             applyPendingRebootMutations();
-            triggerAmbientDistortion();
-            window.setTimeout(runGlitchLoop, 260);
-            window.setTimeout(startFatalRestartSequence, 39800);
+            window.setTimeout(activatePrimaryCorruptionLayer, INITIAL_CLEAN_DURATION_MS);
+            window.setTimeout(activateSecondaryCorruptionLayer, SECONDARY_REVEAL_DELAY_MS);
+            window.setTimeout(runGlitchLoop, INITIAL_CLEAN_DURATION_MS + 600);
+            window.setTimeout(startFatalRestartSequence, FIRST_RESTART_DELAY_MS);
         });
     </script>
 
